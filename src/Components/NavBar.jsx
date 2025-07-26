@@ -38,16 +38,15 @@ const NavBar = () => {
           <p className="inline-block ml-3 px-3 cursor-pointer hover:bg-[#4bd3a8ca]  hover:scale-102 transition-all duation-700 hover:text-black  duration-300 ease-in-out text-lg font-semibold text-[#10b981] border border-[#10b981]  rounded-sm p-1">
             Hire Me
           </p>
-          <a
-            href="../assets/resume/Resume.pdf"
-            download={false}
-            width="100%"
-            height="800px"
+
+          <p
+            onClick={() => {
+              window.open("/Resume.pdf", "_blank");
+            }}
+            className="inline-block  bg-[#4bd3a8ca] duration-300 hover:bg-transparent hover:outline-[#4bd3a8ca] hover:text-[#4bd3a8ca] hover:outline px-3 p-1 text-lg rounded-sm cursor-pointer  text-black font-semibold tex-md"
           >
-            <p className="inline-block  bg-[#4bd3a8ca] duration-300 hover:bg-transparent hover:outline-[#4bd3a8ca] hover:text-[#4bd3a8ca] hover:outline px-3 p-1 text-lg rounded-sm cursor-pointer  text-black font-semibold tex-md">
-              Resume
-            </p>
-          </a>
+            Resume
+          </p>
         </div>
         <div className="lg:hidden ">
           <span
