@@ -116,24 +116,27 @@ const HeroContent = () => {
         />
       </motion.div>
       {/* socials */}
-      <div className="hidden ml-5 lg:ml-15 sm:flex justify-end items-center flex-col gap-10 w-10 h-[60vh] text-gray-300 fixed left-0 bottom-0 ">
-        <div className="flex flex-col gap-4">
-          {" "}
+      <div className="hidden  overflow-hidden ml-5 lg:ml-15 sm:flex justify-end items-center flex-col gap-10 w-10 h-[80vh] text-gray-300 fixed left-0 bottom-0 ">
+        <div className="flex flex-col justify-center items-center gap-4 h-full ">
           {socialIcons.map(({ icon: Icon, color, link }, index) => {
             return (
               <a
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#4bd3a8ca] duration-400 hover:text-3xl text-2xl cursor-pointer"
+                className="hover:text-[#4bd3a8ca] duration-400 hover:text-2xl text-xl cursor-pointer"
                 key={index + 1}
               >
                 <Icon />
               </a>
             );
           })}
+          <hr color="#c7cbd3" className="w-[1.8px] h-30 " />
+
+          <span className="text-nowrap mt-6 -rotate-90 mb-8 text-md font-semibold capitalize">
+           contact me
+          </span>
         </div>
-        <hr className="border-l-2 h-40 border-gray-300" />
       </div>
     </motion.div>
   );

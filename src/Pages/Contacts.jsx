@@ -130,14 +130,16 @@ const Contacts = () => {
                 </div>
               </div>
               <div className="flex animate-bounce justify-center gap-4 text-lg md:text-xl text-gray-300">
-                {socialIcons.map(({ icon: Icon, color }, index) => (
-                  <span
+                {socialIcons.map(({ icon: Icon, color, link }, index) => (
+                  <a
+                    href={link}
+                    target="_blank"
                     key={index + 1}
-                    className="p-1 rounded-lg  text-xl shadow-[0_4px_6px_black]"
+                    className="p-1 rounded-lg  text-xl shadow-[0_1px_8px_rgba(255,255,255,0.3)]"
                     style={{ background: color }}
                   >
                     <Icon />
-                  </span>
+                  </a>
                 ))}
               </div>
             </div>
