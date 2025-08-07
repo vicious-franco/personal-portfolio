@@ -179,7 +179,6 @@ const Contacts = () => {
                     name="message"
                     required
                     className="border px-3 min-h-30 max-h-full rounded-sm border-[#4bd3a8ca] flex-grow-1 w-full  outline-none"
-                    id=""
                   ></textarea>
                 </div>
                 <div className="w-full flex justify-center">

@@ -22,16 +22,31 @@ export const socialIcons = [
     id: 1,
     icon: FaGithub,
     color: "#181717",
-    link: "github.com/vicious-franco",
+    link: "https://github.com/vicious-franco",
   },
-  { id: 2, icon: FaInstagram, color: "#E1306C", link: "" },
-  { id: 3, icon: FaWhatsapp, color: "#25D366", link: "" },
-  { id: 4, icon: BiLogoGmail, color: "#D14836", link: "" },
+  {
+    id: 2,
+    icon: FaInstagram,
+    color: "#E1306C",
+    link: "https://www.instagram.com/_____leon_____________?igsh=MWRmZWYyZTY0anYydQ== ",
+  },
+  {
+    id: 3,
+    icon: FaWhatsapp,
+    color: "#25D366",
+    link: "https://wa.me/250787723139",
+  },
+  {
+    id: 4,
+    icon: BiLogoGmail,
+    color: "#D14836",
+    link: "mailto:irakaramale@gmail.com",
+  },
   {
     id: 5,
     icon: FiLinkedin,
     color: "#0A66C2",
-    link: "linkedin.com/in/irakaramajean-francois-leon-070831278",
+    link: "https://www.linkedin.com/in/irakarama-jean-francois-leon-070831278",
   },
 ];
 
