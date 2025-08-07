@@ -6,12 +6,20 @@ import { slideInFromLeft } from "../utilis/motion";
 const AboutMe = () => {
   return (
     <section id="about">
-      <h2 className="text-4xl font-extrabold text-center  text-white/85 uppercase tracking-wide">
+      <motion.h2
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.4,
+          type: "tween",
+        }}
+        className="text-4xl font-extrabold text-center  text-white/85 uppercase tracking-wide"
+      >
         About <span className="text-[#4bd3a8ca]">Me </span>
-      </h2>
+      </motion.h2>
       <hr className="w-35 m-[18px_auto] border-t-2 border-[#4bd3a8ca]/50" />
 
-      <div className="w-full  flex md:flex-row flex-col-reverse mx-auto my-10 p-10 backdrop-blur-5xl rounded-xl border duration-300 hover:shadow-[8px_12px_12px_#4bd3a8ca]  border-[#4bd3a8ca]/50 shadow-md shadow-white/10  text-gray-300 font-sans">
+      <div className="w-full  flex md:flex-row flex-col-reverse mx-auto my-10 p-10 backdrop-blur-5xl rounded-xl border duration-300 hover:shadow-[8px_12px_12px_#4bd3a8ca]  border-[#4bd3a8ca]/20 shadow-md shadow-white/10  text-gray-300 ">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}

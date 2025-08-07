@@ -72,9 +72,9 @@ const HeroContent = () => {
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className={`text-lg text-gray-400 mt-5 max-w-[800px] ${
+            className={`text-lg text-gray-400 mt-5 max-w-[800px]  ${
               readMore ? "line-clamp-none" : "line-clamp-3 lg:line-clamp-none"
-            }`}
+            }`} 
           >
             I’m currently an IT student at RP College of Kigali, passionate
             about building clean, responsive, and user-friendly web
@@ -86,7 +86,7 @@ const HeroContent = () => {
           </motion.p>
           <span
             onClick={() => setreadMore((prev) => !prev)}
-            className="inline-block text-[#4bd3a8ca] cursor-pointer hover:text-[#4bd3a8f0]"
+            className="lg:hidden inline-block text-[#4bd3a8ca] cursor-pointer hover:text-[#4bd3a8f0]"
           >
             {!readMore ? " Read More" : "Show Less"}
           </span>{" "}
@@ -119,7 +119,7 @@ const HeroContent = () => {
       <div className="hidden ml-5 lg:ml-15 sm:flex justify-end items-center flex-col gap-10 w-10 h-[60vh] text-gray-300 fixed left-0 bottom-0 ">
         <div className="flex flex-col gap-4">
           {" "}
-          {socialIcons.map((Icon, index) => (
+          {socialIcons.map(({ icon: Icon, color }, index) => (
             <span
               className="hover:text-[#4bd3a8ca] duration-400 hover:text-3xl text-2xl cursor-pointer"
               key={index + 1}

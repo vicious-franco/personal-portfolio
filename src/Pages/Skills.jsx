@@ -5,17 +5,25 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css";
 import { Pagination, Autoplay } from "swiper/modules";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 w-full  h-full relative overflow-hidden py-20 lg:px-10"
+      className="flex  flex-col items-center justify-center gap-3 w-full  h-full relative overflow-hidden py-20 lg:px-10"
     >
       <div>
-        <h2 className="text-4xl font-extrabold text-center  text-white/85 uppercase tracking-wide">
+        <motion.h2
+          initial={{ opacity: 0, x: -200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.4,
+            type: "tween",
+          }}
+          className="text-4xl font-extrabold text-center  text-white/85 uppercase tracking-wide"
+        >
           My <span className="text-[#4bd3a8ca]">Skills </span>
-        </h2>
+        </motion.h2>
         <hr className="w-35 m-[18px_auto] border-t-2 border-[#4bd3a8ca]/50" />
       </div>
       <Swiper
@@ -52,7 +60,7 @@ const Skills = () => {
       </Swiper>
 
       {/* sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2  w-full gap-6 mt-10">
+      <div className="grid  grid-cols-1 px-3 sm:px-1 md:grid-cols-2 h-full  w-full gap-6 mt-10 pb-10">
         {/* fronted */}
         <div>
           <motion.h1
@@ -64,9 +72,9 @@ const Skills = () => {
             Frontend
           </motion.h1>
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, scale: 0.4 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, ease: easeInOut, type: "tween" }}
             className="border-[#4bd3a8ca]/60  backdrop-blur-3xl h-full hover:-translate-[2px] ease-in-out hover:shadow-[0px_3px_12px_#4bd3a8ca] duration-500 border p-3 rounded-md flex flex-col justify-center"
           >
             {frontEndSkills.map((item, index) => {
@@ -89,26 +97,30 @@ const Skills = () => {
         </div>
 
         {/* backend */}
-        <div>
+        <div className="space-y-10  mt-14 md:mt-0">
           <motion.h1
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
             className="text-gray-300 mb-6 text-center uppercase font-bold text-xl"
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, ease: easeInOut, type: "tween" }}
           >
             Backend
           </motion.h1>
-
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.3 }}
+            initial={{ opacity: 0, scale: 0.4 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              ease: easeInOut,
+              type: "tween",
+              delay: 0.4,
+            }}
             className="border-[#4bd3a8ca]/60 backdrop-blur-3xl hover:shadow-[1px_1px_10px_#4bd3a8ca] duration-500 ease-in-out hover:-translate-1.5  h-full border p-3 rounded-md flex flex-col justify-start pt-12"
           >
             {BackendSkills.map((item, index) => {
               return (
                 <div key={index + 1}>
-                  <div className="flex px-2 py-1 text-gray-200 text-md font-semibold justify-between">
+                  <div className=" flex px-2 py-1 text-gray-200 text-md font-semibold justify-between">
                     <p>{item.name}</p>
                     <p>{item.rate}%</p>
                   </div>

@@ -35,9 +35,12 @@ const NavBar = () => {
           ))}
         </ul>
         <div className="hidden lg:flex gap-3   text-gray-300 items-center">
-          <p className="inline-block ml-3 px-3 cursor-pointer hover:bg-[#4bd3a8ca]  hover:scale-102 transition-all duation-700 hover:text-black  duration-300 ease-in-out text-lg font-semibold text-[#10b981] border border-[#10b981]  rounded-sm p-1">
+          <a
+            href={`#contacts`}
+            className="inline-block ml-3 px-3 cursor-pointer hover:bg-[#4bd3a8ca]  hover:scale-102 transition-all duation-700 hover:text-black  duration-300 ease-in-out text-lg font-semibold text-[#10b981] border border-[#10b981]  rounded-sm p-1"
+          >
             Hire Me
-          </p>
+          </a>
 
           <p
             onClick={() => {

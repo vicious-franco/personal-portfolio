@@ -8,20 +8,46 @@ const Project = () => {
 
   return (
     <section id="projects" className="mb-10 overflow-hidden">
-      <h2 className="text-4xl  font-extrabold text-center mt-12 text-white/85 uppercase tracking-wide">
+      <motion.h2
+        initial={{ opacity: 0, x: 200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.4,
+          type: "tween",
+        }}
+        className="text-4xl w-full  text-center font-extrabold  mt-12 text-white/85 uppercase tracking-wide"
+      >
         Recent <span className="text-[#4bd3a8ca]">works </span>
-      </h2>
-      <hr className="w-35 m-[18px_auto] border-t-2 border-[#4bd3a8ca]/50" />
+        <hr className="w-35 m-[18px_auto] border-t-2 border-[#4bd3a8ca]/50" />
+      </motion.h2>
       <div>
-        <p className="text-center text-gray-400 text-md max-w-4xl mx-auto mb-10">
+        <motion.p
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.4,
+            delay: 0.4,
+            type: "tween",
+          }}
+          className=" mt-5 text-start text-lg md:mx-auto md:mt-10 md:text-center text-gray-400 text-md max-w-4xl  mb-10"
+        >
           Here are some of the projects I’ve been working on recently. These
           reflect my growing skills in frontend and backend development using
           tools like HTML, CSS, JavaScript, React, Node.js, and Tailwind CSS.
           I’m always building and learning, so stay tuned for more!
-        </p>
+        </motion.p>
       </div>
       {/* project description */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 lg:gap-8 backdrop-blur-3xl ">
+      <motion.div
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.6,
+          type: "tween",
+          delay: 0.6,
+        }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 lg:gap-8 backdrop-blur-3xl "
+      >
         {projects.map((item) => {
           return (
             <div key={item.id} className="pl-3">
@@ -58,8 +84,11 @@ const Project = () => {
                 <h1 className=" uppercase ">{item.name}</h1>
                 <div>
                   {item.techs.map((item, index) => (
-                    <span className="mr-4 px-2 py-1 text-sm bg-[#4bd3a835] rounded-lg text-gray-200" key={index + 1}>
-                      {item.slice(0,1)}
+                    <span
+                      className="mr-4 px-2 py-1 text-sm bg-[#4bd3a835] rounded-lg text-gray-200"
+                      key={index + 1}
+                    >
+                      {item.slice(0, 1)}
                     </span>
                   ))}
                 </div>
@@ -67,7 +96,7 @@ const Project = () => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
       <div className="flex justify-center mt-10">
         <motion.a
           variants={slideInFromLeft(1)}

@@ -4,7 +4,15 @@ import { GlobalContext } from "../GlobalContext/GlobalContext";
 import { motion } from "framer-motion";
 
 const MobileNav = () => {
-  const nav = ["Home", "About", "Projects", "Skills", "Contact", "Resume"];
+  const nav = [
+    { name: "Home", link: "home" },
+    { name: "About", link: "about" },
+    { name: "Skills", link: "skills" },
+    { name: "Background", link: "background" },
+    { name: "Projects", link: "projects" },
+    { name: "Contact", link: "contacts" },
+  ];
+
   const { setIsOpen } = useContext(GlobalContext);
 
   return (
@@ -21,15 +29,22 @@ const MobileNav = () => {
         >
           <IoClose className="text-3xl text-gray-400 active:text-[#4bd3a8b0]" />
         </span>
-        {nav.map((item, index) => (
-          <span
+        {nav.map(({ name, link }, index) => (
+          <a
+            href={`#${link}`}
             onClick={() => setIsOpen(false)}
             className="text-gray-300 font-semibold text-xl  py-2 px-10 active:text-[#0eac79] cursor-pointer"
             key={index + 1}
           >
-            {item}
-          </span>
+            {name}
+          </a>
         ))}
+        <a
+          className="text-gray-300 font-semibold text-xl  py-2 px-10 active:text-[#0eac79] cursor-pointer"
+          onClick={() => window.open("/Resume.pdf", "_blank")}
+        >
+          Resume
+        </a>
       </div>
       <div className="text-gray-400 mb-5 px-2 text-sm">
         <h1>&copy; 2025 LeonDev — Built with passion.</h1>

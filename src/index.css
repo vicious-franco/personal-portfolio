@@ -49,4 +49,17 @@ html {
   .bounce {
     animation: bouncing 2s linear infinite;
   }
+
+  @keyframes autoLoader {
+    0% {
+      width: 100%;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+  .ToastLoad {
+    animation: autoLoader 2s linear forwards;
+  }
 }

@@ -8,7 +8,6 @@ import { FaGithub } from "react-icons/fa";
 import { SiTailwindcss, SiExpress, SiMongodb } from "react-icons/si";
 
 // project images
-import reality from "./dev assets/NextWebsite.png";
 import accordion from "./dev assets/projects/accordion.png";
 import spotify from "./dev assets/projects/spotify-clone.png";
 import stripe from "./dev assets/projects/stripe.png";
@@ -19,11 +18,11 @@ import ReadMore from "./dev assets/projects/Read More.png";
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs } from "react-icons/fa";
 
 export const socialIcons = [
-  FaGithub,
-  FaInstagram,
-  FaWhatsapp,
-  BiLogoGmail,
-  FiLinkedin,
+  { id: 1, icon: FaGithub, color: "#181717" },
+  { id: 2, icon: FaInstagram, color: "#E1306C" },
+  { id: 3, icon: FaWhatsapp, color: "#25D366" },
+  { id: 4, icon: BiLogoGmail, color: "#D14836" },
+  { id: 5, icon: FiLinkedin, color: "#0A66C2" },
 ];
 
 export const skillIcons = [
@@ -97,7 +96,8 @@ export const projects = [
 export const navbar = [
   { name: "Home", link: "home" },
   { name: "About", link: "about" },
-  { name: "Projects", link: "projects" },
   { name: "Skills", link: "skills" },
+  { name: "Background", link: "background" },
+  { name: "Projects", link: "projects" },
   { name: "Contact", link: "contacts" },
 ];
