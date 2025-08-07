@@ -16,9 +16,9 @@ const Contacts = () => {
 
   const removeToast = () => {
     const timer = setTimeout(() => {
-      console.log("done");
+      setShowToast(false);
     }, 4000);
-    };
+  };
 
   const form = useRef();
   const sendEmail = (e) => {
@@ -42,7 +42,7 @@ const Contacts = () => {
             Icon: <MdDone />,
             iconBg: "#3cc59a",
           });
-
+          console.log(result.status);
           form.current.reset();
         },
         (error) => {
@@ -152,12 +152,14 @@ const Contacts = () => {
                 <div className="flex  flex-col lg:flex-row justify-center mt-20 gap-10 ">
                   <input
                     name="user_name"
+                    required
                     type="text"
                     placeholder="First Name"
                     className="border px-3 rounded-sm border-[#4bd3a8ca] flex-grow-1 flex-shrink-1 p-2 outline-none"
                   />
                   <input
                     type="text"
+                    required
                     name="user_lastname"
                     placeholder="Last Name"
                     className="border px-3 rounded-sm border-[#4bd3a8ca] flex-grow-1 flex-shrink-1 p-2 outline-none"
@@ -166,6 +168,7 @@ const Contacts = () => {
                 <div className="w-full ">
                   <input
                     type="text"
+                    required
                     name="email"
                     placeholder="Email"
                     className="border px-3 rounded-sm border-[#4bd3a8ca] flex-grow-1 w-full p-2 outline-none"
@@ -174,6 +177,7 @@ const Contacts = () => {
                 <div className="w-full max-h-50 ">
                   <textarea
                     name="message"
+                    required
                     className="border px-3 min-h-30 max-h-full rounded-sm border-[#4bd3a8ca] flex-grow-1 w-full  outline-none"
                     id=""
                   ></textarea>

@@ -60,6 +60,6 @@ html {
     }
   }
   .ToastLoad {
-    animation: autoLoader 2s linear forwards;
+    animation: autoLoader 3s linear forwards;
   }
 }

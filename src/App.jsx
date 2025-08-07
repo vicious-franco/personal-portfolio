@@ -5,7 +5,7 @@ import ScrollProgress from "./Components/ScrollProgress";
 import MsgSentToast from "./Components/MsgSentToast";
 const App = () => {
   return (
-    <div className=" max-w-screen ">
+    <div className=" max-w-screen  overflow-hidden">
       <ContextProvider>
         <Hero />
         <MsgSentToast />

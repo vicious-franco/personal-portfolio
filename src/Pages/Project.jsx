@@ -5,6 +5,15 @@ import { slideInFromLeft } from "../utilis/motion";
 
 const Project = () => {
   const [desc, setDesc] = useState({});
+  const [showToolTip, setshowToolTip] = useState({});
+
+  const handleToolTip = (id) => {
+    const alreadyVisible = !!showToolTip[id];
+    setshowToolTip((prev) => {
+      return { ...prev, [id]: !alreadyVisible };
+    });
+    console.log(showToolTip);
+  };
 
   return (
     <section id="projects" className="mb-10 overflow-hidden">
@@ -82,14 +91,22 @@ const Project = () => {
               </div>
               <div className="w-full  font-semibold flex gap-3 justify-between  text-gray-300 mt-3">
                 <h1 className=" uppercase ">{item.name}</h1>
-                <div>
-                  {item.techs.map((item, index) => (
-                    <span
-                      className="mr-4 px-2 py-1 text-sm bg-[#4bd3a835] rounded-lg text-gray-200"
-                      key={index + 1}
-                    >
-                      {item.slice(0, 1)}
-                    </span>
+                <div className="w-[60%] flex justify-end">
+                  {item.techs.map((tech, index) => (
+                    <div className="relative" key={index + 1}>
+                      <span
+                        onMouseEnter={() => handleToolTip(tech.id)}
+                        onMouseLeave={() => handleToolTip(tech.id)}
+                        className="mr-4  border border-[#4bd3a8ca]/30  px-2 py-1 text-sm bg-[#4bd3a835] rounded-lg text-gray-300"
+                      >
+                        {tech.name.slice(0, 1)}
+                      </span>
+                      {showToolTip[tech.id] && (
+                        <span className="absolute text-nowrap -bottom-9 bg-black/80 px-3 rounded-lg right-1 z-20">
+                          {tech.name}
+                        </span>
+                      )}{" "}
+                    </div>
                   ))}
                 </div>
               </div>

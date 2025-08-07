@@ -74,7 +74,7 @@ const HeroContent = () => {
             transition={{ duration: 0.7 }}
             className={`text-lg text-gray-400 mt-5 max-w-[800px]  ${
               readMore ? "line-clamp-none" : "line-clamp-3 lg:line-clamp-none"
-            }`} 
+            }`}
           >
             I’m currently an IT student at RP College of Kigali, passionate
             about building clean, responsive, and user-friendly web
@@ -119,13 +119,15 @@ const HeroContent = () => {
       <div className="hidden ml-5 lg:ml-15 sm:flex justify-end items-center flex-col gap-10 w-10 h-[60vh] text-gray-300 fixed left-0 bottom-0 ">
         <div className="flex flex-col gap-4">
           {" "}
-          {socialIcons.map(({ icon: Icon, color }, index) => (
-            <span
+          {socialIcons.map(({ icon: Icon, color, link }, index) => (
+            <a
+              href={link}
+              target="_blank"
               className="hover:text-[#4bd3a8ca] duration-400 hover:text-3xl text-2xl cursor-pointer"
               key={index + 1}
             >
               <Icon />
-            </span>
+            </a>
           ))}
         </div>
         <hr className="border-l-2 h-40 border-gray-300" />

@@ -18,11 +18,21 @@ import ReadMore from "./dev assets/projects/Read More.png";
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs } from "react-icons/fa";
 
 export const socialIcons = [
-  { id: 1, icon: FaGithub, color: "#181717" },
-  { id: 2, icon: FaInstagram, color: "#E1306C" },
-  { id: 3, icon: FaWhatsapp, color: "#25D366" },
-  { id: 4, icon: BiLogoGmail, color: "#D14836" },
-  { id: 5, icon: FiLinkedin, color: "#0A66C2" },
+  {
+    id: 1,
+    icon: FaGithub,
+    color: "#181717",
+    link: "github.com/vicious-franco",
+  },
+  { id: 2, icon: FaInstagram, color: "#E1306C", link: "" },
+  { id: 3, icon: FaWhatsapp, color: "#25D366", link: "" },
+  { id: 4, icon: BiLogoGmail, color: "#D14836", link: "" },
+  {
+    id: 5,
+    icon: FiLinkedin,
+    color: "#0A66C2",
+    link: "linkedin.com/in/irakaramajean-francois-leon-070831278",
+  },
 ];
 
 export const skillIcons = [
@@ -57,37 +67,59 @@ export const projects = [
     id: 1,
     name: "Stripe",
     image: stripe,
-    techs: ["React", "Tailwind"],
+    techs: [
+      { id: 10, name: "React" },
+      { id: 11, name: "Tailwind" },
+    ],
   },
   {
     id: 2,
     name: "Accordion",
     image: accordion,
-    techs: ["React", "Tailwind"],
+    techs: [
+      { id: 12, name: "React" },
+      { id: 13, name: "Tailwind" },
+    ],
   },
   {
     id: 3,
     name: "Milacurous",
     image: milacurous,
-    techs: ["Mongo", "Express Js", "React", "Tailwind"],
+    techs: [
+      { id: 14, name: "Mongo" },
+      { id: 15, name: "Express Js" },
+      { id: 16, name: "React" },
+      { id: 17, name: "Tailwind" },
+    ],
   },
   {
     id: 4,
     name: "Spotify clone",
     image: spotify,
-    techs: ["Mongo", "Express Js", "React", "Tailwind"],
+    techs: [
+      { id: 18, name: "Mongo" },
+      { id: 19, name: "Express Js" },
+      { id: 20, name: "React" },
+      { id: 21, name: "Tailwind" },
+    ],
   },
   {
     id: 5,
     name: "E-Tutor",
     image: Etutor,
-    techs: ["React", "Tailwind"],
+    techs: [
+      { id: 22, name: "React" },
+      { id: 23, name: "Tailwind" },
+    ],
   },
   {
     id: 6,
     name: "Tours",
     image: ReadMore,
-    techs: ["React", "Tailwind"],
+    techs: [
+      { id: 24, name: "React" },
+      { id: 25, name: "Tailwind" },
+    ],
   },
 ];
 
